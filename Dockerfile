@@ -5,7 +5,7 @@
 #
 
 # pull base image
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 
 # don't ask the user when running apt-get install
 ENV DEBIAN_FRONTEND noninteractive
@@ -17,8 +17,6 @@ RUN \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y software-properties-common byobu curl git htop unzip vim wget && \
-  echo 'Europe/Berlin' > /etc/timezone && \
-  dpkg-reconfigure tzdata && \
   rm -rf /var/lib/apt/lists/*
 
 # install oracle java
